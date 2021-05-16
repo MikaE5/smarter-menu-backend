@@ -1,0 +1,10 @@
+[
+  {
+    "id": "classification/vegetarian",
+    "name": "vegetarisch"
+  },
+  {
+    "id": "classification/vegan",
+    "name": "vegan"
+  }
+]

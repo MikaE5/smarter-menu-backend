@@ -1,0 +1,42 @@
+[
+  {
+    "id": "allergen/wheat",
+    "name": "Weizen",
+    "abbreviation": "G$_1$"
+  },
+  {
+    "id": "allergen/rye",
+    "name": "Roggen",
+    "abbreviation": "G$_2$"
+  },
+  {
+    "id": "allergen/egg",
+    "name": "Eier",
+    "abbreviation": "Ei"
+  },
+  {
+    "id": "allergen/soy",
+    "name": "Soja",
+    "abbreviation": "Sb"
+  },
+  {
+    "id": "allergen/milk",
+    "name": "Milch (einschließlich Laktose)",
+    "abbreviation": "M"
+  },
+  {
+    "id": "allergen/milk-protein",
+    "name": "Milcheiweiß",
+    "abbreviation": "Me"
+  },
+  {
+    "id": "allergen/lactose",
+    "name": "Laktose",
+    "abbreviation": "La"
+  },
+  {
+    "id": "allergen/hazelnut",
+    "name": "Haselnüsse",
+    "abbreviation": "Sf$_2$"
+  }
+]

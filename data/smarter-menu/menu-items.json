@@ -1,0 +1,108 @@
+[
+  {
+    "id": "menu-item/coffee",
+    "name": "Kaffee",
+    "item_number": 1,
+    "categories": ["category/warm-drinks"],
+    "price": {
+      "amount": 2.3,
+      "unit": "€"
+    },
+    "image": "coffee.jpg",
+    "classifications": ["classification/vegetarian"]
+  },
+  {
+    "id": "menu-item/sparkling-water",
+    "name": "Spritziges Mineralwasser",
+    "item_number": 3,
+    "categories": ["category/cold-drinks"],
+    "price": {
+      "amount": 1.75,
+      "unit": "€"
+    },
+    "image": "sparkling-water.jpg",
+    "classifications": ["classification/vegetarian", "classification/vegan"]
+  },
+  {
+    "id": "menu-item/cappuccino",
+    "name": "Cappuccino",
+    "item_number": 2,
+    "categories": ["category/warm-drinks"],
+    "price": {
+      "amount": 2.4,
+      "unit": "€"
+    },
+    "image": "cappuccino.jpg",
+    "classifications": ["classification/vegetarian"],
+    "allergens": ["allergen/milk"]
+  },
+  {
+    "id": "menu-item/red-wine",
+    "name": "Rotwein",
+    "item_number": 4,
+    "categories": ["category/cold-drinks"],
+    "price": {
+      "amount": 4.6,
+      "unit": "€"
+    }
+  },
+  {
+    "id": "menu-item/wheat-beer",
+    "name": "Weizenbier",
+    "item_number": 5,
+    "categories": ["category/cold-drinks"],
+    "price": {
+      "amount": 4.2,
+      "unit": "€"
+    }
+  },
+  {
+    "id": "menu-item/apple-cake",
+    "name": "Apfelkuchen",
+    "item_number": 10,
+    "categories": ["category/cake"],
+    "price": {
+      "amount": 3.1,
+      "unit": "€"
+    },
+    "image": "apple-cake.jpg",
+    "classifications": ["classification/vegetarian"],
+    "allergens": ["allergen/milk", "allergen/hazelnut", "allergen/wheat"]
+  },
+  {
+    "id": "menu-item/strawberry-cake",
+    "name": "Erdbeerkuchen",
+    "item_number": 11,
+    "categories": ["category/cake"],
+    "price": {
+      "amount": 3.1,
+      "unit": "€"
+    },
+    "image": "strawberry-cake.jpg",
+    "allergens": ["allergen/milk", "allergen/hazelnut", "allergen/wheat"]
+  },
+  {
+    "id": "menu-item/scrambled-eggs-with-bacon",
+    "name": "Das smart-menu Frühstück",
+    "description": "Rührei mit Speck und Toast",
+    "item_number": 20,
+    "categories": ["category/breakfast"],
+    "price": {
+      "amount": 4.65,
+      "unit": "€"
+    },
+    "image": "scrambled-eggs-with-bacon.jpg"
+  },
+  {
+    "id": "menu-item/hardboiled-egg",
+    "name": "Smartes Frühstück",
+    "description": "Ein hartgekochtes Ei mit Toast und Butter",
+    "item_number": 21,
+    "categories": ["category/breakfast"],
+    "price": {
+      "amount": 2.55,
+      "unit": "€"
+    },
+    "image": "hardboiled-egg.jpg"
+  }
+]

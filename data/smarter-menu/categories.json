@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Kuchen",
+    "id": "category/cake",
+    "category_type": "C1"
+  },
+  {
+    "name": "Getränke",
+    "id": "category/drinks",
+    "category_type": "C1",
+    "sub_categories": ["category/cold-drinks", "category/warm-drinks"]
+  },
+  {
+    "name": "Kalte Getränke",
+    "id": "category/cold-drinks",
+    "category_type": "C2"
+  },
+  {
+    "name": "Warme Getränke",
+    "id": "category/warm-drinks",
+    "category_type": "C2"
+  },
+  {
+    "id": "category/breakfast",
+    "name": "Frühstück",
+    "category_type": "C1"
+  }
+]

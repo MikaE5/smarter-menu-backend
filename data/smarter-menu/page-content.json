@@ -1,0 +1,19 @@
+{
+  "header": {
+    "title": "smarter-menu"
+  },
+  "categories": {
+    "homeBreadCrumb": "Home"
+  },
+  "menuItems": {
+    "allergens": "Allergene"
+  },
+  "bookmarks": {
+    "noItems": "Keine Einträge in der Merkliste.",
+    "title": "Merkliste"
+  },
+  "footer": {
+    "slogan": "made possible with smarter-menu",
+    "dataPrivacy": "Datenschutz"
+  }
+}

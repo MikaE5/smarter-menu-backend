@@ -27,6 +27,17 @@ provider:
   # you can overwrite defaults here
   stage: dev
   region: eu-central-1
+  deploymentBucket:
+    blockPublicAccess: true
+    skipPolicySetup: true
+  iam:
+    role:
+      name: 'smarter-menu-lambda-role'
+      statements:
+        - Effect: 'Allow'
+          Resource: '*'
+          Action:
+            - dynamodb:Query
 
 plugins:
   - serverless-plugin-typescript
@@ -66,6 +77,12 @@ functions:
     events:
       - httpApi:
           path: /hello
+          method: get
+  get-categories:
+    handler: functions/get-categories.handler
+    events:
+      - httpApi:
+          path: /categories
           method: get
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
