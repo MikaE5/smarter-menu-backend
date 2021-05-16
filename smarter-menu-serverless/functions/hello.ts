@@ -6,6 +6,6 @@ export const hello = async (event: APIGatewayProxyEvent) => {
       'Access-Control-Allow-Origin': '*',
     },
     statusCode: 200,
-    body: JSON.stringify('Lambda is alive!'),
+    body: JSON.stringify({ msg: 'Hello from smarter-menu!' }),
   };
 };
