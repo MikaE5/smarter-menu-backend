@@ -38,6 +38,10 @@ provider:
           Resource: '*'
           Action:
             - dynamodb:Query
+  httpApi:
+    cors:
+      allowedOrigins:
+        - 'https://youthful-yalow-6e29ce.netlify.app'
 
 plugins:
   - serverless-plugin-typescript
