@@ -1,3 +1,24 @@
 {
-  "theme_url": "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  "page_content": {
+    "header": {
+      "title": "smarter-menu"
+    },
+    "categories": {
+      "home_bread_crumb": "Home"
+    },
+    "menu_items": {
+      "allergens": "Allergene"
+    },
+    "bookmarks": {
+      "no_items": "Keine Einträge in der Merkliste.",
+      "title": "Merkliste"
+    },
+    "footer": {
+      "slogan": "made possible with smarter-menu",
+      "data_privacy": "Datenschutz"
+    }
+  },
+  "style": {
+    "theme_url": "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  }
 }

@@ -1,0 +1,23 @@
+{
+  "name": "smarter-menu-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikaE5/smarter-menu-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MikaE5/smarter-menu-backend/issues"
+  },
+  "homepage": "https://github.com/MikaE5/smarter-menu-backend#readme",
+  "devDependencies": {
+    "aws-sdk": "^2.908.0",
+    "uuid": "^8.3.2"
+  }
+}

@@ -1,108 +1,158 @@
 [
   {
-    "id": "menu-item/coffee",
-    "name": "Kaffee",
-    "item_number": 1,
-    "categories": ["category/warm-drinks"],
-    "price": {
-      "amount": 2.3,
-      "unit": "€"
-    },
-    "image": "coffee.jpg",
-    "classifications": ["classification/vegetarian"]
-  },
-  {
-    "id": "menu-item/sparkling-water",
-    "name": "Spritziges Mineralwasser",
-    "item_number": 3,
-    "categories": ["category/cold-drinks"],
-    "price": {
-      "amount": 1.75,
-      "unit": "€"
-    },
-    "image": "sparkling-water.jpg",
-    "classifications": ["classification/vegetarian", "classification/vegan"]
-  },
-  {
-    "id": "menu-item/cappuccino",
-    "name": "Cappuccino",
+    "classifications": [
+      "meta/classification/smarter-menu/f8cecf17-adc9-42a5-97a1-1fd976f90297"
+    ],
+    "image": "cappuccino.jpg",
+    "categories": [
+      "category/smarter-menu/22588ead-145f-4420-9bf0-411cdce3f1bb"
+    ],
+    "allergens": [
+      "meta/allergen/smarter-menu/454ae9b1-f2e6-44f0-bba6-51c40a0542c7"
+    ],
+    "customer_id": "smarter-menu",
     "item_number": 2,
-    "categories": ["category/warm-drinks"],
     "price": {
       "amount": 2.4,
       "unit": "€"
     },
-    "image": "cappuccino.jpg",
-    "classifications": ["classification/vegetarian"],
-    "allergens": ["allergen/milk"]
+    "id": "item/smarter-menu/106cc7f2-5803-4ef9-a289-1286295e495b",
+    "name": "Cappuccino"
   },
   {
-    "id": "menu-item/red-wine",
-    "name": "Rotwein",
-    "item_number": 4,
-    "categories": ["category/cold-drinks"],
-    "price": {
-      "amount": 4.6,
-      "unit": "€"
-    }
-  },
-  {
-    "id": "menu-item/wheat-beer",
-    "name": "Weizenbier",
-    "item_number": 5,
-    "categories": ["category/cold-drinks"],
-    "price": {
-      "amount": 4.2,
-      "unit": "€"
-    }
-  },
-  {
-    "id": "menu-item/apple-cake",
-    "name": "Apfelkuchen",
-    "item_number": 10,
-    "categories": ["category/cake"],
-    "price": {
-      "amount": 3.1,
-      "unit": "€"
-    },
-    "image": "apple-cake.jpg",
-    "classifications": ["classification/vegetarian"],
-    "allergens": ["allergen/milk", "allergen/hazelnut", "allergen/wheat"]
-  },
-  {
-    "id": "menu-item/strawberry-cake",
-    "name": "Erdbeerkuchen",
-    "item_number": 11,
-    "categories": ["category/cake"],
-    "price": {
-      "amount": 3.1,
-      "unit": "€"
-    },
-    "image": "strawberry-cake.jpg",
-    "allergens": ["allergen/milk", "allergen/hazelnut", "allergen/wheat"]
-  },
-  {
-    "id": "menu-item/scrambled-eggs-with-bacon",
-    "name": "Das smart-menu Frühstück",
-    "description": "Rührei mit Speck und Toast",
+    "image": "scrambled-eggs-with-bacon.jpg",
+    "categories": [
+      "category/smarter-menu/5757d03e-8a59-496d-befd-3977fa30a4dc"
+    ],
+    "customer_id": "smarter-menu",
     "item_number": 20,
-    "categories": ["category/breakfast"],
     "price": {
       "amount": 4.65,
       "unit": "€"
     },
-    "image": "scrambled-eggs-with-bacon.jpg"
+    "description": "Rührei mit Speck und Toast",
+    "id": "item/smarter-menu/2787909f-ead5-446f-ba53-edcd458ea496",
+    "name": "Das smart-menu Frühstück"
   },
   {
-    "id": "menu-item/hardboiled-egg",
-    "name": "Smartes Frühstück",
-    "description": "Ein hartgekochtes Ei mit Toast und Butter",
+    "image": "hardboiled-egg.jpg",
+    "categories": [
+      "category/smarter-menu/5757d03e-8a59-496d-befd-3977fa30a4dc"
+    ],
+    "customer_id": "smarter-menu",
     "item_number": 21,
-    "categories": ["category/breakfast"],
     "price": {
       "amount": 2.55,
       "unit": "€"
     },
-    "image": "hardboiled-egg.jpg"
+    "description": "Ein hartgekochtes Ei mit Toast und Butter",
+    "id": "item/smarter-menu/3d9b39b9-84af-4948-b88f-411eb10394b7",
+    "name": "Smartes Frühstück"
+  },
+  {
+    "image": "strawberry-cake.jpg",
+    "categories": [
+      "category/smarter-menu/79cd87a4-61a9-4ae1-bc3a-4a4d1f274529"
+    ],
+    "allergens": [
+      "meta/allergen/smarter-menu/454ae9b1-f2e6-44f0-bba6-51c40a0542c7",
+      "meta/allergen/smarter-menu/071c1ab8-16a6-409e-ba30-0a00b4e4da6b",
+      "meta/allergen/smarter-menu/3a9e2694-f059-4367-b198-5d20fb9035b8"
+    ],
+    "customer_id": "smarter-menu",
+    "item_number": 11,
+    "price": {
+      "amount": 3.1,
+      "unit": "€"
+    },
+    "description": "mit regionalen Erdbeeren und Sahne",
+    "id": "item/smarter-menu/4cc35d1e-2bf5-46cf-abd1-6c332d578890",
+    "name": "Erdbeerkuchen"
+  },
+  {
+    "classifications": [
+      "meta/classification/smarter-menu/f8cecf17-adc9-42a5-97a1-1fd976f90297"
+    ],
+    "image": "coffee.jpg",
+    "categories": [
+      "category/smarter-menu/22588ead-145f-4420-9bf0-411cdce3f1bb"
+    ],
+    "customer_id": "smarter-menu",
+    "item_number": 1,
+    "price": {
+      "amount": 2.3,
+      "unit": "€"
+    },
+    "id": "item/smarter-menu/61f5c86d-34e4-4cb8-a8c1-d1422fcb6d72",
+    "name": "Kaffee"
+  },
+  {
+    "classifications": [
+      "meta/classification/smarter-menu/f8cecf17-adc9-42a5-97a1-1fd976f90297"
+    ],
+    "image": "apple-cake.jpg",
+    "categories": [
+      "category/smarter-menu/79cd87a4-61a9-4ae1-bc3a-4a4d1f274529"
+    ],
+    "allergens": [
+      "meta/allergen/smarter-menu/454ae9b1-f2e6-44f0-bba6-51c40a0542c7",
+      "meta/allergen/smarter-menu/071c1ab8-16a6-409e-ba30-0a00b4e4da6b",
+      "meta/allergen/smarter-menu/3a9e2694-f059-4367-b198-5d20fb9035b8"
+    ],
+    "customer_id": "smarter-menu",
+    "item_number": 10,
+    "price": {
+      "amount": 3.1,
+      "unit": "€"
+    },
+    "description": "Selbstgemachter Apfelkuchen mit Streuseln",
+    "id": "item/smarter-menu/7151300f-f512-4f7b-ace7-ceb2fbd0314a",
+    "name": "Apfelkuchen"
+  },
+  {
+    "categories": [
+      "category/smarter-menu/f1beea2b-6192-4569-9cc4-45f656f247db"
+    ],
+    "customer_id": "smarter-menu",
+    "item_number": 5,
+    "price": {
+      "amount": 4.2,
+      "unit": "€"
+    },
+    "description": "Helles Weizenbier nach bayrischer Brauart",
+    "id": "item/smarter-menu/9be03e82-1874-4a83-9cf4-a27cf4b013d8",
+    "name": "Weizen"
+  },
+  {
+    "classifications": [
+      "meta/classification/smarter-menu/f8cecf17-adc9-42a5-97a1-1fd976f90297",
+      "meta/classification/smarter-menu/9dae902d-1d81-4565-8281-c7cd9028d5e"
+    ],
+    "image": "sparkling-water.jpg",
+    "categories": [
+      "category/smarter-menu/f1beea2b-6192-4569-9cc4-45f656f247db"
+    ],
+    "customer_id": "smarter-menu",
+    "item_number": 3,
+    "price": {
+      "amount": 1.75,
+      "unit": "€"
+    },
+    "id": "item/smarter-menu/b1055e16-229f-44b1-81b0-76585e8088b8",
+    "name": "Spritziges Mineralwasser"
+  },
+  {
+    "categories": [
+      "category/smarter-menu/f1beea2b-6192-4569-9cc4-45f656f247db"
+    ],
+    "customer_id": "smarter-menu",
+    "item_number": 4,
+    "price": {
+      "amount": 4.6,
+      "unit": "€"
+    },
+    "description": "Halbtrockener, süßer Rotwein aus der Region",
+    "id": "item/smarter-menu/ca84348a-51fe-4841-9cf1-dcfd0e1eaa0a",
+    "name": "Rotwein"
   }
 ]

@@ -6,9 +6,9 @@ import { headerMiddleware } from '../middleware/header.middleware';
 import { CustomerSchema } from '../schemas/customer.schema';
 import { baseGetAll } from './util/base-get.util';
 
-const getCategories = baseGetAll('category');
+const getItemsMeta = baseGetAll('meta');
 
-export const handler = middy(getCategories)
+export const handler = middy(getItemsMeta)
   .use(headerMiddleware())
   .use(jsonBodyParser())
   .use(

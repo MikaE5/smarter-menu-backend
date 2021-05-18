@@ -1,28 +1,33 @@
 [
   {
-    "name": "Kuchen",
-    "id": "category/cake",
-    "category_type": "C1"
+    "customer_id": "smarter-menu",
+    "category_type": "C2",
+    "id": "category/smarter-menu/22588ead-145f-4420-9bf0-411cdce3f1bb",
+    "name": "Warme Getränke"
   },
   {
-    "name": "Getränke",
-    "id": "category/drinks",
+    "customer_id": "smarter-menu",
     "category_type": "C1",
-    "sub_categories": ["category/cold-drinks", "category/warm-drinks"]
+    "id": "category/smarter-menu/5757d03e-8a59-496d-befd-3977fa30a4dc",
+    "name": "Frühstück"
   },
   {
-    "name": "Kalte Getränke",
-    "id": "category/cold-drinks",
-    "category_type": "C2"
+    "customer_id": "smarter-menu",
+    "category_type": "C1",
+    "id": "category/smarter-menu/79cd87a4-61a9-4ae1-bc3a-4a4d1f274529",
+    "name": "Kuchen"
   },
   {
-    "name": "Warme Getränke",
-    "id": "category/warm-drinks",
-    "category_type": "C2"
+    "sub_categories": ["category/cold-drinks", "category/warm-drinks"],
+    "customer_id": "smarter-menu",
+    "category_type": "C1",
+    "id": "category/smarter-menu/a5929c23-af51-4041-9a49-277f43ba16be",
+    "name": "Getränke"
   },
   {
-    "id": "category/breakfast",
-    "name": "Frühstück",
-    "category_type": "C1"
+    "customer_id": "smarter-menu",
+    "category_type": "C2",
+    "id": "category/smarter-menu/f1beea2b-6192-4569-9cc4-45f656f247db",
+    "name": "Kalte Getränke"
   }
 ]

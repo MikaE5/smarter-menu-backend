@@ -1,0 +1,60 @@
+[
+  {
+    "customer_id": "smarter-menu",
+    "abbreviation": "Sf$_2$",
+    "id": "meta/allergen/smarter-menu/071c1ab8-16a6-409e-ba30-0a00b4e4da6b",
+    "name": "Haselnüsse"
+  },
+  {
+    "customer_id": "smarter-menu",
+    "abbreviation": "G$_1$",
+    "id": "meta/allergen/smarter-menu/3a9e2694-f059-4367-b198-5d20fb9035b8",
+    "name": "Weizen"
+  },
+  {
+    "customer_id": "smarter-menu",
+    "abbreviation": "M",
+    "id": "meta/allergen/smarter-menu/454ae9b1-f2e6-44f0-bba6-51c40a0542c7",
+    "name": "Milch (einschließlich Laktose)"
+  },
+  {
+    "customer_id": "smarter-menu",
+    "abbreviation": "Ei",
+    "id": "meta/allergen/smarter-menu/67bc91e0-c04c-48d8-9d7d-ff486caf2a34",
+    "name": "Eier"
+  },
+  {
+    "customer_id": "smarter-menu",
+    "abbreviation": "Me",
+    "id": "meta/allergen/smarter-menu/6e066906-2598-40f9-872e-36345adfad43",
+    "name": "Milcheiweiß"
+  },
+  {
+    "customer_id": "smarter-menu",
+    "abbreviation": "La",
+    "id": "meta/allergen/smarter-menu/9da1efc8-d2fd-436a-8054-a604b2e844a2",
+    "name": "Laktose"
+  },
+  {
+    "customer_id": "smarter-menu",
+    "abbreviation": "Sb",
+    "id": "meta/allergen/smarter-menu/c760bbc8-80c7-4b63-8fb0-112199312738",
+    "name": "Soja"
+  },
+  {
+    "customer_id": "smarter-menu",
+    "abbreviation": "G$_2$",
+    "id": "meta/allergen/smarter-menu/e0ae1411-b7fd-424c-8882-04058630ee08",
+    "name": "Roggen"
+  },
+  {
+    "id": "meta/classification/smarter-menu/9dae902d-1d81-4565-8281-c7cd9028d5e",
+    "name": "vegan",
+    "customer_id": "smarter-menu"
+  },
+  {
+    "id": "meta/classification/smarter-menu/f8cecf17-adc9-42a5-97a1-1fd976f90297",
+    "name": "vegetarisch",
+    "customer_id": "smarter-menu"
+  }
+]

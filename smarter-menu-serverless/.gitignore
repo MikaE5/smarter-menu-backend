@@ -2,3 +2,4 @@ node_modules
 .build
 .serverless
 aws-config.json
+config.ts
