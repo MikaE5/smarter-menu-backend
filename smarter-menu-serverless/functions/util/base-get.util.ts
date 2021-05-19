@@ -1,6 +1,7 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import { getDatabase } from '../../database/database';
 import { getAllTypeForCustomerQuery } from '../../database/util/database.util';
+import { getBody } from '../../util/api-request.util';
 import { apiResponse } from '../../util/api-response.util';
 
 export const baseGetAll = (
@@ -9,7 +10,9 @@ export const baseGetAll = (
   return async (
     event: APIGatewayProxyEvent
   ): Promise<APIGatewayProxyResult> => {
-    const customerId = event.body?.['customer_id'];
+    const body = getBody(event.body);
+
+    const customerId = body['customer_id'];
     if (customerId === undefined) {
       return apiResponse._400();
     }

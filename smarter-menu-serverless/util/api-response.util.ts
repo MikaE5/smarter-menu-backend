@@ -11,6 +11,9 @@ export const apiResponse: ApiResponse = {
   _500: () => {
     return {
       statusCode: 500,
+      headers: {
+        'content-type': 'application/json',
+      },
       body: JSON.stringify({
         msg: 'Internal Server Error',
       }),
@@ -19,6 +22,9 @@ export const apiResponse: ApiResponse = {
   _400: () => {
     return {
       statusCode: 400,
+      headers: {
+        'content-type': 'application/json',
+      },
       body: JSON.stringify({
         msg: 'Bad Request',
       }),
@@ -27,6 +33,9 @@ export const apiResponse: ApiResponse = {
   _403: () => {
     return {
       statusCode: 403,
+      headers: {
+        'content-type': 'application/json',
+      },
       body: JSON.stringify({
         msg: 'Forbidden',
       }),
@@ -35,6 +44,9 @@ export const apiResponse: ApiResponse = {
   _200: (body: object) => {
     return {
       statusCode: 200,
+      headers: {
+        'content-type': 'application/json',
+      },
       body: JSON.stringify(body),
     };
   },
