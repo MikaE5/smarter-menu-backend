@@ -11,7 +11,8 @@ export const headerMiddleware: () => middy.MiddlewareObj<
     before: (
       request: middy.Request<APIGatewayProxyEvent, APIGatewayProxyResult, Error>
     ) => {
-      const netlifyHeader = request.event.headers['X-Netlify-Host'];
+      // make sure to use lower case
+      const netlifyHeader = request.event.headers['x-netlify-host'];
       if (
         netlifyHeader === null ||
         netlifyHeader === undefined ||

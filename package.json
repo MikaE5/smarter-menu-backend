@@ -18,6 +18,7 @@
   "homepage": "https://github.com/MikaE5/smarter-menu-backend#readme",
   "devDependencies": {
     "aws-sdk": "^2.908.0",
+    "node-fetch": "^2.6.1",
     "uuid": "^8.3.2"
   }
 }

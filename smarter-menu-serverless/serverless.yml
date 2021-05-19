@@ -37,6 +37,7 @@ provider:
           Resource: '*'
           Action:
             - dynamodb:Query
+            - dynamodb:GetItem
 
 plugins:
   - serverless-plugin-typescript
