@@ -20,6 +20,11 @@ service: smarter-menu-serverless
 # Check out our docs for more details
 frameworkVersion: '2'
 
+custom:
+  iamName:
+    dev: 'smarter-menu-lambda-role-dev'
+    prod: 'smarter-menu-lambda-role-prod'
+
 provider:
   name: aws
   runtime: nodejs12.x
@@ -29,9 +34,17 @@ provider:
   deploymentBucket:
     blockPublicAccess: true
     skipPolicySetup: true
+  httpApi:
+    cors:
+      allowedOrigins:
+        - https://www.smarter-menu.de
+      allowedHeaders:
+        - x-netlify-host
+        - content-type
+
   iam:
     role:
-      name: 'smarter-menu-lambda-role'
+      name: ${self:custom.iamName.${opt:stage, self:provider.stage}}
       statements:
         - Effect: 'Allow'
           Resource: '*'
