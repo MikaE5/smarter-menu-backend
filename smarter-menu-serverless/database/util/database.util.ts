@@ -1,4 +1,4 @@
-import { GetItemInput, QueryInput } from 'aws-sdk/clients/dynamodb';
+import { GetItemInput, QueryInput, ScanInput } from 'aws-sdk/clients/dynamodb';
 import {
   SMARTER_MENU_DB_NAME,
   SMARTER_MENU_DB_PARTITION_KEY,
@@ -19,12 +19,12 @@ export const getAllTypeForCustomerQuery = (
   } as QueryInput;
 };
 
-export const getPageContentForCustomer = (customer: string): GetItemInput => {
+export const getPageConfigsQuery = (): ScanInput => {
   return {
     TableName: SMARTER_MENU_DB_NAME,
-    Key: {
-      [SMARTER_MENU_DB_PARTITION_KEY]: customer,
-      [SMARTER_MENU_DB_SORT_KEY]: `page-config/${customer}`,
+    FilterExpression: `begins_with(${SMARTER_MENU_DB_SORT_KEY}, :page)`,
+    ExpressionAttributeValues: {
+      ':page': 'page-config',
     },
-  } as GetItemInput;
+  } as ScanInput;
 };

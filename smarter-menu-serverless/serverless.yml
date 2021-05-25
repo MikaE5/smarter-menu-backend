@@ -44,13 +44,13 @@ provider:
 
   iam:
     role:
-      name: ${self:custom.iamName.${opt:stage, self:provider.stage}}
+      name: 'smarter-menu-lambda-role-prod'
       statements:
         - Effect: 'Allow'
           Resource: '*'
           Action:
             - dynamodb:Query
-            - dynamodb:GetItem
+            - dynamodb:Scan
 
 plugins:
   - serverless-plugin-typescript
@@ -81,9 +81,9 @@ functions:
       - httpApi:
           path: /items-meta
           method: post
-  get-page-config:
-    handler: functions/get-page-config.handler
+  get-page-configs:
+    handler: functions/get-page-configs.handler
     events:
       - httpApi:
-          path: /page-config
+          path: /page-configs
           method: post

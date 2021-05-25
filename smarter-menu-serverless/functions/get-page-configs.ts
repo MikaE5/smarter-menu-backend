@@ -4,31 +4,24 @@ import { headerMiddleware } from '../middleware/header.middleware';
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import { apiResponse } from '../util/api-response.util';
 import { getDatabase } from '../database/database';
-import { getPageContentForCustomer } from '../database/util/database.util';
-import { getBody } from '../util/api-request.util';
+import { getPageConfigsQuery } from '../database/util/database.util';
 
-const getPageConfig = async (
+const getPageConfigs = async (
   event: APIGatewayProxyEvent
 ): Promise<APIGatewayProxyResult> => {
-  const body = getBody(event.body);
-
-  const customerId = body['customer_id'];
-  if (customerId === undefined) {
-    return apiResponse._400();
-  }
-
   try {
-    const pageContent = await getDatabase()
-      .get(getPageContentForCustomer(customerId))
+    const pageConfigs = await getDatabase()
+      .scan(getPageConfigsQuery())
       .promise();
     return apiResponse._200({
-      data: pageContent.Item ? pageContent.Item : undefined,
+      data: pageConfigs.Items ? pageConfigs.Items : [],
     });
   } catch (error) {
+    console.log(error);
     return apiResponse._500();
   }
 };
 
-export const handler = middy(getPageConfig)
+export const handler = middy(getPageConfigs)
   .use(headerMiddleware())
   .use(httpErrorHandler());
