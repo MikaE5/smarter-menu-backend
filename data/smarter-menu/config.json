@@ -1,10 +1,10 @@
 {
   "page_content": {
     "header": {
-      "title": "smarter-menu"
+      "title": "smarter-menu-test"
     },
     "categories": {
-      "home_bread_crumb": "Home"
+      "home_bread_crumb": "Übersicht"
     },
     "menu_items": {
       "allergens": "Allergene"

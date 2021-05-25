@@ -1,4 +1,4 @@
-import { GetItemInput, QueryInput, ScanInput } from 'aws-sdk/clients/dynamodb';
+import { QueryInput, ScanInput } from 'aws-sdk/clients/dynamodb';
 import {
   SMARTER_MENU_DB_NAME,
   SMARTER_MENU_DB_PARTITION_KEY,
