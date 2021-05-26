@@ -87,3 +87,15 @@ functions:
       - httpApi:
           path: /page-configs
           method: post
+  login:
+    handler: functions/login.handler
+    events:
+      - httpApi:
+          path: /login
+          method: post
+  get-all-for-customer:
+    handler: functions/get-all-for-customer.handler
+    events:
+      - httpApi:
+          path: /customer-data
+          method: post
