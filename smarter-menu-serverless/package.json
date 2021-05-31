@@ -9,7 +9,6 @@
     "@middy/http-json-body-parser": "^2.2.0",
     "@middy/validator": "^2.2.0",
     "aws-sdk": "^2.907.0",
-    "bcrypt": "^5.0.1",
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {

@@ -1,12 +1,21 @@
-import { compare } from 'bcrypt';
 import { sign, verify } from 'jsonwebtoken';
 import { JWT_SECRET } from '../../config';
+import { StoredPassword } from '../model/stored-password.interface';
+import { pbkdf2Sync } from 'crypto';
 
-export const isValidPassword = async (
+export const isValidPassword = (
   password: string,
-  hash: string
-): Promise<boolean> => {
-  return await compare(password, hash);
+  storedPassword: StoredPassword
+): boolean => {
+  const key = pbkdf2Sync(
+    password,
+    storedPassword.salt,
+    storedPassword.iterations,
+    64,
+    'sha512'
+  );
+  const hash = key.toString('hex');
+  return hash === storedPassword.hash;
 };
 
 export const createToken = (user: object): string =>

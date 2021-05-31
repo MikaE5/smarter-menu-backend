@@ -6,6 +6,7 @@ import { getBody } from '../util/api-request.util';
 import { getDatabase } from '../database/database';
 import { getUserQuery } from '../database/util/database.util';
 import { createToken, isValidPassword } from './util/auth.util';
+import { StoredPassword } from './model/stored-password.interface';
 
 const login = async (event: APIGatewayProxyEvent) => {
   const body = getBody(event.body);
@@ -21,16 +22,18 @@ const login = async (event: APIGatewayProxyEvent) => {
     if (user.Item === undefined) {
       return apiResponse._403();
     }
-    const hashedPassword: string = user.Item.password;
+    const storedPassword: StoredPassword = user.Item.password;
 
-    if (hashedPassword === undefined) {
+    if (
+      storedPassword === undefined ||
+      storedPassword.hash === undefined ||
+      storedPassword.salt === undefined ||
+      storedPassword.iterations === undefined
+    ) {
       return apiResponse._403();
     }
 
-    const validPassword: boolean = await isValidPassword(
-      password,
-      hashedPassword
-    );
+    const validPassword: boolean = isValidPassword(password, storedPassword);
 
     if (!validPassword) {
       return apiResponse._403();

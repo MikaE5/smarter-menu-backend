@@ -51,6 +51,7 @@ provider:
           Action:
             - dynamodb:Query
             - dynamodb:Scan
+            - dynamodb:GetItem
 
 plugins:
   - serverless-plugin-typescript
