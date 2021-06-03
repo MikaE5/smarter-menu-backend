@@ -25,6 +25,7 @@ export const baseGetAll = (
         data: items.Items ? items.Items : [],
       });
     } catch (error) {
+      console.log(error);
       return apiResponse._500();
     }
   };

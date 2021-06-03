@@ -33,6 +33,7 @@ const getAllForCustomer = async (event: APIGatewayProxyEvent) => {
       data: data.Items ? removePageConfig(data.Items as Document[]) : [],
     });
   } catch (error) {
+    console.log(error);
     return apiResponse._500();
   }
 };

@@ -48,6 +48,7 @@ const login = async (event: APIGatewayProxyEvent) => {
       }),
     });
   } catch (error) {
+    console.log(error);
     return apiResponse._500();
   }
 };

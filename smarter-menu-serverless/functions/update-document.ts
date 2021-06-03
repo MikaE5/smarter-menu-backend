@@ -46,13 +46,16 @@ const updateDocument = async (event: APIGatewayProxyEvent) => {
     documentToUpload = document;
   }
 
+  documentToUpload.customer_id = customer;
+
   try {
     await getDatabase().put(getPutItemQuery(documentToUpload)).promise();
 
     return apiResponse._200({
-      msg: 'okay',
+      data: documentToUpload,
     });
   } catch (error) {
+    console.log(error);
     return apiResponse._500();
   }
 };

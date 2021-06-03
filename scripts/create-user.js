@@ -8,11 +8,12 @@ const createUser = async () => {
 
   const salt = crypto.randomBytes(128).toString('hex');
   const iterations = 10000;
-  const key = crypto.pbkdf2Sync('y7h0lvyU9SM', salt, iterations, 64, 'sha512');
+  const key = crypto.pbkdf2Sync('', salt, iterations, 64, 'sha512');
   const hash = key.toString('hex');
 
   const user = {
-    customer_id: 'smarter-menu',
+    customer_id: 'smarter-menu-test',
+    username: 'smarter-menu-test',
     password: {
       salt,
       iterations,
