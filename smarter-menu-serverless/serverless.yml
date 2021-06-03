@@ -52,6 +52,7 @@ provider:
             - dynamodb:Query
             - dynamodb:Scan
             - dynamodb:GetItem
+            - dynamodb:PutItem
 
 plugins:
   - serverless-plugin-typescript
@@ -60,43 +61,57 @@ plugins:
 functions:
   hello:
     handler: functions/hello.handler
+    memorySize: 128
     events:
       - httpApi:
           path: /hello
           method: post
   get-categories:
     handler: functions/get-categories.handler
+    memorySize: 512
     events:
       - httpApi:
           path: /categories
           method: post
   get-items:
     handler: functions/get-items.handler
+    memorySize: 512
     events:
       - httpApi:
           path: /items
           method: post
   get-items-meta:
     handler: functions/get-items-meta.handler
+    memorySize: 512
     events:
       - httpApi:
           path: /items-meta
           method: post
   get-page-configs:
     handler: functions/get-page-configs.handler
+    memorySize: 512
     events:
       - httpApi:
           path: /page-configs
           method: post
   login:
     handler: functions/login.handler
+    memorySize: 512
     events:
       - httpApi:
           path: /login
           method: post
   get-all-for-customer:
     handler: functions/get-all-for-customer.handler
+    memorySize: 512
     events:
       - httpApi:
           path: /customer-data
+          method: post
+  update-document:
+    handler: functions/update-document.handler
+    memorySize: 512
+    events:
+      - httpApi:
+          path: /update
           method: post

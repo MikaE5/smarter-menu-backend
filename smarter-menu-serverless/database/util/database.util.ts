@@ -1,4 +1,9 @@
-import { GetItemInput, QueryInput, ScanInput } from 'aws-sdk/clients/dynamodb';
+import {
+  GetItemInput,
+  PutItemInput,
+  QueryInput,
+  ScanInput,
+} from 'aws-sdk/clients/dynamodb';
 import {
   SMARTER_MENU_DB_NAME,
   SMARTER_MENU_DB_PARTITION_KEY,
@@ -48,4 +53,11 @@ export const getAllForCustomerQuery = (customer: string): QueryInput => {
       ':customer': customer,
     },
   } as QueryInput;
+};
+
+export const getPutItemQuery = (document: object): PutItemInput => {
+  return {
+    TableName: SMARTER_MENU_DB_NAME,
+    Item: document,
+  } as PutItemInput;
 };
