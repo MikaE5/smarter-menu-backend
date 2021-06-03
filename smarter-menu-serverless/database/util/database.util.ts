@@ -4,6 +4,7 @@ import {
   SMARTER_MENU_DB_PARTITION_KEY,
   SMARTER_MENU_DB_SORT_KEY,
   SMARTER_MENU_USER_DB_NAME,
+  SMARTER_MENU_USER_DB_PARTITION_KEY,
 } from '../../config';
 
 export const getAllTypeForCustomerQuery = (
@@ -30,11 +31,11 @@ export const getPageConfigsQuery = (): ScanInput => {
   } as ScanInput;
 };
 
-export const getUserQuery = (customerId: string): GetItemInput => {
+export const getUserQuery = (username: string): GetItemInput => {
   return {
     TableName: SMARTER_MENU_USER_DB_NAME,
     Key: {
-      [SMARTER_MENU_DB_PARTITION_KEY]: customerId,
+      [SMARTER_MENU_USER_DB_PARTITION_KEY]: username,
     },
   } as GetItemInput;
 };

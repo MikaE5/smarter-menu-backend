@@ -6,23 +6,26 @@ import { getBody } from '../util/api-request.util';
 import { getDatabase } from '../database/database';
 import { getUserQuery } from '../database/util/database.util';
 import { createToken, isValidPassword } from './util/auth.util';
-import { StoredPassword } from './model/stored-password.interface';
+import { StoredPassword, User } from './model/user.interface';
 
 const login = async (event: APIGatewayProxyEvent) => {
   const body = getBody(event.body);
 
-  const customerId: string = body['customer_id'];
+  const username: string = body['username'];
   const password: string = body['password'];
-  if (customerId === undefined || password === undefined) {
+  if (username === undefined || password === undefined) {
     return apiResponse._400();
   }
 
   try {
-    const user = await getDatabase().get(getUserQuery(customerId)).promise();
-    if (user.Item === undefined) {
+    const userData = await getDatabase().get(getUserQuery(username)).promise();
+    if (userData.Item === undefined) {
       return apiResponse._403();
     }
-    const storedPassword: StoredPassword = user.Item.password;
+
+    const user: User = userData.Item as User;
+
+    const storedPassword: StoredPassword = user.password;
 
     if (
       storedPassword === undefined ||
@@ -41,7 +44,7 @@ const login = async (event: APIGatewayProxyEvent) => {
 
     return apiResponse._200({
       token: createToken({
-        user: customerId,
+        customer: user.customer_id,
       }),
     });
   } catch (error) {

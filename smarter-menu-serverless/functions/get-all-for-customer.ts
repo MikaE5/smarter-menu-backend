@@ -18,15 +18,15 @@ const getAllForCustomer = async (event: APIGatewayProxyEvent) => {
     return apiResponse._400();
   }
 
-  const { valid, user } = verifyToken(token);
+  const { valid, customer } = verifyToken(token);
 
-  if (!valid || user === undefined) {
+  if (!valid || customer === undefined) {
     return apiResponse._401();
   }
 
   try {
     const data = await getDatabase()
-      .query(getAllForCustomerQuery(user))
+      .query(getAllForCustomerQuery(customer))
       .promise();
 
     return apiResponse._200({
