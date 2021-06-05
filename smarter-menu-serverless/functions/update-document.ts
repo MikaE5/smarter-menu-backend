@@ -35,16 +35,15 @@ const updateDocument = async (event: APIGatewayProxyEvent) => {
     return apiResponse._401();
   }
 
-  let documentToUpload;
+  const documentToUpload: Document = document;
   if (missingId) {
     const id = getNewIdForType(documentType, customer);
     if (id === undefined) {
       return apiResponse._400();
     }
-    documentToUpload = Object.assign(document, { id });
-  } else {
-    documentToUpload = document;
+    documentToUpload.id = id;
   }
+  documentToUpload.customer_id = customer;
 
   documentToUpload.customer_id = customer;
 
@@ -52,7 +51,8 @@ const updateDocument = async (event: APIGatewayProxyEvent) => {
     await getDatabase().put(getPutItemQuery(documentToUpload)).promise();
 
     return apiResponse._200({
-      data: documentToUpload,
+      msg: 'okay',
+      document: documentToUpload,
     });
   } catch (error) {
     console.log(error);

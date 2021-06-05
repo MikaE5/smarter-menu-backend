@@ -38,6 +38,7 @@ provider:
     cors:
       allowedOrigins:
         - https://www.smarter-menu.de
+        - https://tender-lamarr-f15086.netlify.app
       allowedHeaders:
         - x-netlify-host
         - content-type
@@ -53,6 +54,7 @@ provider:
             - dynamodb:Scan
             - dynamodb:GetItem
             - dynamodb:PutItem
+            - dynamodb:DeleteItem
 
 plugins:
   - serverless-plugin-typescript
@@ -115,3 +117,10 @@ functions:
       - httpApi:
           path: /update
           method: post
+  delete-document:
+    handler: functions/delete-document.handler
+    memorySize: 512
+    events:
+      - httpApi:
+          path: /delete
+          method: delete

@@ -1,4 +1,5 @@
 import {
+  DeleteItemInput,
   GetItemInput,
   PutItemInput,
   QueryInput,
@@ -60,4 +61,17 @@ export const getPutItemQuery = (document: object): PutItemInput => {
     TableName: SMARTER_MENU_DB_NAME,
     Item: document,
   } as PutItemInput;
+};
+
+export const getDeleteItemQuery = (
+  id: string,
+  customer: string
+): DeleteItemInput => {
+  return {
+    TableName: SMARTER_MENU_DB_NAME,
+    Key: {
+      [SMARTER_MENU_DB_PARTITION_KEY]: customer,
+      [SMARTER_MENU_DB_SORT_KEY]: id,
+    },
+  } as DeleteItemInput;
 };
