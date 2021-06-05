@@ -53,6 +53,7 @@ provider:
             - dynamodb:Scan
             - dynamodb:GetItem
             - dynamodb:PutItem
+            - dynamodb:DeleteItem
 
 plugins:
   - serverless-plugin-typescript
