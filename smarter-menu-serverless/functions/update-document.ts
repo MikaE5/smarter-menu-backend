@@ -5,10 +5,7 @@ import { apiResponse } from '../util/api-response.util';
 import { getBody } from '../util/api-request.util';
 import { getDatabase } from '../database/database';
 import { verifyToken } from './util/auth.util';
-import {
-  getDeleteItemQuery,
-  getPutItemQuery,
-} from '../database/util/database.util';
+import { getPutItemQuery } from '../database/util/database.util';
 import { Document } from './model/document.interface';
 import { getNewIdForType } from './util/document-id.util';
 
@@ -18,7 +15,6 @@ const updateDocument = async (event: APIGatewayProxyEvent) => {
   const token: string = body['token'];
   const document: Document = body['data'];
   const documentType = body['document_type'];
-  const deleted: boolean = body['_deleted'];
 
   const missingId: boolean = document ? document.id === undefined : true;
 
@@ -39,43 +35,22 @@ const updateDocument = async (event: APIGatewayProxyEvent) => {
     return apiResponse._401();
   }
 
-  const docId = document.id;
-  if (deleted) {
-    if (docId === undefined) {
-      return apiResponse._400();
-    }
-    try {
-      await getDatabase().delete(getDeleteItemQuery(docId, customer)).promise();
-      return apiResponse._200({
-        msg: 'okay',
-        deleted: true,
-      });
-    } catch (error) {
-      console.log(error);
-      return apiResponse._500();
-    }
-  }
-
-  if (document.customer_id === undefined) {
-    return apiResponse._400();
-  }
-
-  let documentToUpload: Document;
+  const documentToUpload: Document = document;
   if (missingId) {
     const id = getNewIdForType(documentType, customer);
     if (id === undefined) {
       return apiResponse._400();
     }
-    documentToUpload = Object.assign(document, { id });
-  } else {
-    documentToUpload = document;
+    documentToUpload.id = id;
   }
+  documentToUpload.customer_id = customer;
 
   try {
     await getDatabase().put(getPutItemQuery(documentToUpload)).promise();
 
     return apiResponse._200({
       msg: 'okay',
+      document: documentToUpload,
     });
   } catch (error) {
     console.log(error);
