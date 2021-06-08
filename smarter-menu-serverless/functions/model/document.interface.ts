@@ -1,6 +1,7 @@
 export interface Document {
   id: string;
   customer_id: string;
+  updatedAt?: string;
 }
 
 export enum DocumentType {
