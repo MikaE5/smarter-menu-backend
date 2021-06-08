@@ -3,7 +3,7 @@ import httpErrorHandler from '@middy/http-error-handler';
 import { headerMiddleware } from '../middleware/header.middleware';
 import { baseGetAll } from './util/base-get.util';
 
-const getItems = baseGetAll('item');
+const getItems = baseGetAll('item', true);
 
 export const handler = middy(getItems)
   .use(headerMiddleware())

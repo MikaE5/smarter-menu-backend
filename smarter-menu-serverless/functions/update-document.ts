@@ -44,6 +44,7 @@ const updateDocument = async (event: APIGatewayProxyEvent) => {
     documentToUpload.id = id;
   }
   documentToUpload.customer_id = customer;
+  document.updatedAt = new Date().toISOString();
 
   documentToUpload.customer_id = customer;
 
