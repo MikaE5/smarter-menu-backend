@@ -19,7 +19,7 @@ export const isValidPassword = (
 };
 
 export const createToken = (user: object): string =>
-  sign(user, JWT_SECRET, { expiresIn: '15m' });
+  sign(user, JWT_SECRET, { expiresIn: '59m' });
 
 export const verifyToken = (
   token: string

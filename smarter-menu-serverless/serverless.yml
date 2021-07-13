@@ -39,6 +39,7 @@ provider:
       allowedOrigins:
         - https://www.smarter-menu.de
         - https://www.cms.smarter-menu.de
+        - https://tender-lamarr-f15086.netlify.app
       allowedHeaders:
         - x-netlify-host
         - content-type

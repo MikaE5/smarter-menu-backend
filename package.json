@@ -19,6 +19,7 @@
   "devDependencies": {
     "aws-sdk": "^2.908.0",
     "node-fetch": "^2.6.1",
+    "randomstring": "^1.2.1",
     "uuid": "^8.3.2"
   }
 }
