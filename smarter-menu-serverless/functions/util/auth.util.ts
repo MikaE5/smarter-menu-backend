@@ -2,6 +2,7 @@ import { sign, verify } from 'jsonwebtoken';
 import { JWT_SECRET } from '../../config';
 import { StoredPassword } from '../model/user.interface';
 import { pbkdf2Sync } from 'crypto';
+import { TOKEN_NA } from '../constants/token.constants';
 
 export const isValidPassword = (
   password: string,
@@ -24,6 +25,12 @@ export const createToken = (user: object): string =>
 export const verifyToken = (
   token: string
 ): { valid: boolean; customer?: string } => {
+  if (token === TOKEN_NA) {
+    return {
+      valid: false,
+    };
+  }
+
   try {
     const data = verify(token, JWT_SECRET);
     return {
