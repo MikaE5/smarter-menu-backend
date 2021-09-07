@@ -1,6 +1,7 @@
 const AWS = require('aws-sdk');
 const crypto = require('crypto');
 const randomstring = require('randomstring');
+require('dotenv').config();
 
 AWS.config.loadFromPath('../aws-config.json');
 
@@ -52,19 +53,15 @@ const createUser = async () => {
         allergens: 'Allergene',
       },
     },
-    style: {
-      theme_url:
-        'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css',
-    },
   };
 
   const userParams = {
-    TableName: 'smarter-menu-user-db-prod',
+    TableName: process.env.SMARTER_MENU_USER_DB_PROD,
     Item: user,
   };
 
   const pageConfigParams = {
-    TableName: 'smarter-menu-db-prod',
+    TableName: process.env.SMARTER_MENU_DB_PROD,
     Item: pageConfig,
   };
 
