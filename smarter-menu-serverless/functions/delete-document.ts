@@ -6,6 +6,7 @@ import { getBody } from '../util/api-request.util';
 import { getDatabase } from '../database/database';
 import { verifyToken } from './util/auth.util';
 import { getDeleteItemQuery } from '../database/util/database.util';
+import { isDefinedString } from './util/validate-body.util';
 
 const deleteDocument = async (event: APIGatewayProxyEvent) => {
   const body = getBody(event.body);
@@ -13,7 +14,7 @@ const deleteDocument = async (event: APIGatewayProxyEvent) => {
   const token: string = body['token'];
   const id: string = body['id'];
 
-  if (token === undefined || id === undefined) {
+  if (!isDefinedString(token) || !isDefinedString(id)) {
     return apiResponse._400();
   }
 

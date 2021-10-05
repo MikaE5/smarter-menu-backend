@@ -5,6 +5,7 @@ import { getBody } from '../../util/api-request.util';
 import { apiResponse } from '../../util/api-response.util';
 import { Document } from '../model/document.interface';
 import { removeDisabledDocs } from './filter-data.util';
+import { isDefinedString } from './validate-body.util';
 
 export const baseGetAll = (
   type: string,
@@ -16,7 +17,7 @@ export const baseGetAll = (
     const body = getBody(event.body);
 
     const customerId = body['customer_id'];
-    if (customerId === undefined) {
+    if (!isDefinedString(customerId)) {
       return apiResponse._400();
     }
 

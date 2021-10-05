@@ -7,7 +7,9 @@ import { getDatabase } from '../database/database';
 import { verifyToken } from './util/auth.util';
 import { getPutItemQuery } from '../database/util/database.util';
 import { Document } from './model/document.interface';
-import { getNewIdForType } from './util/document-id.util';
+import { getNewIdForTypeSafe } from './util/document-id.util';
+import { SMARTER_MENU_DB_NAME } from '../config';
+import { isDefinedString } from './util/validate-body.util';
 
 const updateDocument = async (event: APIGatewayProxyEvent) => {
   const body = getBody(event.body);
@@ -22,7 +24,7 @@ const updateDocument = async (event: APIGatewayProxyEvent) => {
     missingId && documentType === undefined;
 
   if (
-    token === undefined ||
+    !isDefinedString(token) ||
     document === undefined ||
     invalidRequestWithMissingDocId
   ) {
@@ -37,7 +39,7 @@ const updateDocument = async (event: APIGatewayProxyEvent) => {
 
   const documentToUpload: Document = document;
   if (missingId) {
-    const id = getNewIdForType(documentType, customer);
+    const id = getNewIdForTypeSafe(documentType, customer);
     if (id === undefined) {
       return apiResponse._400();
     }
@@ -49,7 +51,9 @@ const updateDocument = async (event: APIGatewayProxyEvent) => {
   documentToUpload.customer_id = customer;
 
   try {
-    await getDatabase().put(getPutItemQuery(documentToUpload)).promise();
+    await getDatabase()
+      .put(getPutItemQuery(SMARTER_MENU_DB_NAME, documentToUpload))
+      .promise();
 
     return apiResponse._200({
       msg: 'okay',

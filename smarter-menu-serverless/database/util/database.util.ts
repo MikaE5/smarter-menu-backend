@@ -56,9 +56,12 @@ export const getAllForCustomerQuery = (customer: string): QueryInput => {
   } as QueryInput;
 };
 
-export const getPutItemQuery = (document: object): PutItemInput => {
+export const getPutItemQuery = (
+  dbName: string,
+  document: object
+): PutItemInput => {
   return {
-    TableName: SMARTER_MENU_DB_NAME,
+    TableName: dbName,
     Item: document,
   } as PutItemInput;
 };

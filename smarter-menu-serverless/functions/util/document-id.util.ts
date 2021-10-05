@@ -4,7 +4,7 @@ import { DocumentType } from '../model/document.interface';
 export const getNewIdForType = (
   type: DocumentType,
   customerId: string
-): string | undefined => {
+): string => {
   if (type === DocumentType.PAGE_CONFIG) {
     return `page-config/${customerId}`;
   }
@@ -25,14 +25,21 @@ export const getNewIdForType = (
     case DocumentType.ALLERGEN:
       docType = 'meta/allergen';
       break;
+    case DocumentType.WISHLIST:
+      docType = 'wishlist';
     default:
-      docType = undefined;
+      docType = 'missing-doc-type';
       break;
   }
 
-  if (docType === undefined) {
-    return undefined;
-  }
-
   return `${docType}/${customerId}/${id}`;
+};
+
+export const getNewIdForTypeSafe = (
+  type: DocumentType,
+  customerId: string
+): string | undefined => {
+  const id = getNewIdForType(type, customerId);
+
+  return id.startsWith('missing-doc-type') ? undefined : id;
 };

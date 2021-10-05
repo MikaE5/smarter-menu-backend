@@ -8,13 +8,14 @@ import { verifyToken } from './util/auth.util';
 import { getAllForCustomerQuery } from '../database/util/database.util';
 import { removePageConfig } from './util/filter-data.util';
 import { Document } from './model/document.interface';
+import { isDefinedString } from './util/validate-body.util';
 
 const getAllForCustomer = async (event: APIGatewayProxyEvent) => {
   const body = getBody(event.body);
 
   const token: string = body['token'];
 
-  if (token === undefined) {
+  if (!isDefinedString(token)) {
     return apiResponse._400();
   }
 

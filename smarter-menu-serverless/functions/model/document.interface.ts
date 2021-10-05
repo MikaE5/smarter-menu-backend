@@ -11,4 +11,5 @@ export enum DocumentType {
   ALLERGEN = 'allergen',
   CLASSIFICATION = 'classification',
   PAGE_CONFIG = 'page-config',
+  WISHLIST = 'wishlist',
 }

@@ -1,5 +1,5 @@
 import { sign, verify } from 'jsonwebtoken';
-import { JWT_SECRET } from '../../config';
+import { BACKEND_CONNECTION_SECRET, JWT_SECRET } from '../../config';
 import { StoredPassword } from '../model/user.interface';
 import { pbkdf2Sync } from 'crypto';
 import { TOKEN_NA } from '../constants/token.constants';
@@ -43,3 +43,6 @@ export const verifyToken = (
     };
   }
 };
+
+export const verifyConnectionKey = (connectionKey: string): boolean =>
+  connectionKey === BACKEND_CONNECTION_SECRET;

@@ -126,3 +126,10 @@ functions:
       - httpApi:
           path: /delete
           method: delete
+  post-wishtlist:
+    handler: functions/analytics/post-wishlist.handler
+    memorySize: 512
+    events:
+      - httpApi:
+          path: /analytics/wishlist
+          method: post
