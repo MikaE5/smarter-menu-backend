@@ -133,3 +133,10 @@ functions:
       - httpApi:
           path: /analytics/wishlist
           method: post
+  get-analyitcs:
+    handler: functions/analytics/get-analytics.handler
+    memorySize: 512
+    events:
+      - httpApi:
+          path: /analytics
+          method: post
